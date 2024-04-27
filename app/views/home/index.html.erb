@@ -1,3 +1,26 @@
-<% (1..100).each do |i| %>
-  <h1>Hello World = <%= i %></h1>
-<% end %>
+<div class="relative bg-cover bg-center text-white p-6" style="background-image: url('images/turtle.png');">
+  <div class="absolute inset-0 bg-blue-800 bg-opacity-50"></div>
+  <div class="relative max-w-3xl mx-auto text-center">
+    <h1 class="text-4xl font-bold">Travel, collaborate, make an impact</h1>
+    <p class="mt-4">Safely travel as a volunteer, have life-changing experiences, and make a positive impact on the world.</p>
+    <p class="mt-4">114,000+ confirmed travelers around the world!</p>
+    <div class="mt-8">
+      <a href="#" class="inline-block bg-green-500 text-white font-bold py-4 px-8 rounded-full hover:bg-green-400">Join the community</a>
+    </div>
+    <div class="mt-4">
+      <a href="#" class="text-white">How it works</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="min">
+
+  <% ['Alice', 'Bob', 'Charlie'].each do |name| %>
+    <% 100.times do %>
+      <p>Hello, <%= name %>!</p>
+    <% end %>
+  <% end %>
+
+</div>
