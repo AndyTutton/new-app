@@ -1,4 +1,4 @@
-<div class="relative bg-cover bg-center text-white p-6 flex justify-center items-center max-h-500" style="background-image: url('<%= asset_path('turtle.png') %>');">
+<div class="p relative bg-cover bg-center text-white p-6 flex justify-center items-center max-h-500" style="background-image: url('<%= asset_path('turtle.png') %>');">
   <div class="absolute inset-0 bg-blue-800 bg-opacity-30"></div>
   <div class="relative max-w-6xl mx-auto text-center">
     <h1 class="text-4xl font-bold pt-6">Volunteer and reconnect <br> with nature</h1>
@@ -13,8 +13,118 @@
   </div>
 </div>
 
-<div class="bg-gray-200 p-4">
-  <% 50.times do %>
-    <p>Hello World</p>
-  <% end %>
-</div>
+
+  <title>Finca Volunteer Experience Booking</title>
+  <!-- Include the Tailwind Play stylesheet -->
+  <style>
+    /* Additional styles for menu dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: white;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      min-width: 160px;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <div class="flex flex-col items-center p-6 min-h-screen">
+
+    <!-- Header -->
+    <div class="w-full bg-white shadow-md p-4 flex justify-between items-center">
+      <!-- Eco-friendly logo on the left -->
+      <a href="/" class="text-2xl font-bold text-green-600 flex items-center">
+        <img src="https://via.placeholder.com/40x40" alt="Eco Logo" class="mr-2 rounded-full"/>
+        Eco Volunteer
+      </a>
+
+      <!-- Burger menu dropdown on the right -->
+      <div class="dropdown relative">
+        <button class="focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <div class="dropdown-content">
+          <ul class="text-left">
+            <li class="py-1 px-4 hover:bg-gray-200"><a href="#">Experiences</a></li>
+            <li class="py-1 px-4 hover:bg-gray-200"><a href="#">About</a></li>
+            <li class="py-1 px-4 hover:bg-gray-200"><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="w-full max-w-4xl bg-white shadow-lg p-6 mt-6 rounded-lg">
+
+      <!-- Title and Description -->
+      <h2 class="text-3xl font-bold text-gray-900">Eco Volunteer Experience</h2>
+      <p class="text-lg text-gray-700 mt-2">Join us in making a difference by volunteering in conservation or community projects.</p>
+
+      <!-- Experience Type -->
+      <span class="block text-sm font-semibold mt-2 text-green-500">Conservation</span>
+
+      <!-- Calendar -->
+      <div class="mt-4">
+        <h3 class="text-xl font-semibold text-gray-900">Availability</h3>
+        <div class="bg-gray-200 p-4 rounded-lg w-full">[Calendar Placeholder]</div>
+      </div>
+
+      <!-- Image Gallery -->
+      <div class="mt-4">
+        <h3 class="text-xl font-semibold text-gray-900">Gallery</h3>
+        <div class="space-y-2">
+          <img src="https://via.placeholder.com/400" class="w-full rounded-lg" alt="Image 1"/>
+          <img src="https://via.placeholder.com/400" class="w-full rounded-lg" alt="Image 2"/>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="mt-4">
+        <h3 class="text-xl font-semibold text-gray-900">Location</h3>
+        <div class="w-full h-64 bg-gray-200" id="map">[Map Placeholder]</div>
+      </div>
+
+      <!-- Reviews -->
+      <div class="mt-4">
+        <h3 class="text-xl font-semibold text-gray-900">Reviews</h3>
+        <div class="border-b border-gray-300 py-2">
+          <div class="flex items-center">
+            <span class="text-yellow-500">★★★★☆</span>
+            <span class="text-gray-600 ml-2">Great experience!</span>
+          </div>
+        </div>
+        <button class="mt-2 bg-green-600 text-white py-1 px-3 rounded hover:bg-green-500">Add Review</button>
+      </div>
+
+      <!-- Host Information -->
+      <div class="mt-4 flex items-center">
+        <img src="https://via.placeholder.com/100" class="w-12 h-12 rounded-full mr-3" alt="Host Avatar"/>
+        <div>
+          <h4 class="text-lg font-bold text-gray-900">Host Name</h4>
+          <p class="text-sm text-gray-600">Bio of the host goes here.</p>
+        </div>
+      </div>
+
+      <!-- Directions -->
+      <div class="mt-4">
+        <h3 class="text-xl font-semibold text-gray-900">Directions</h3>
+        <p class="text-gray-700">Directions to the location go here.</p>
+        <a href="#" class="text-blue-600 hover:underline">Open in Google Maps</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-8 w-full bg-white p-4 text-center">
+      <p class="text-sm text-gray-600">&copy; 2024 Eco Volunteer. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
