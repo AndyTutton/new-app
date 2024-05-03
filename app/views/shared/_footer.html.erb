@@ -10,7 +10,9 @@
   </div>
 
   <div class="text-gray-900 text-sm flex flex-col items-center w-full">
-    <%= image_tag 'earth.png', class: "w-[50px]"   %>
+    <%= link_to experiences_path do %>
+      <%= image_tag 'earth.png', class: "w-[50px]" %>
+    <% end %>
   </div>
 
   <div class="pt-4 text-gray-900 text-sm flex flex-col items-center w-full">

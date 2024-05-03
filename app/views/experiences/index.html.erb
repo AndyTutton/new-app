@@ -1,0 +1,12 @@
+
+<h1>Experiences</h1>
+
+<ul>
+  <% @experiences.each do |experience| %>
+    <li>
+      <%= link_to "#{experience.title} - #{experience.country}, #{experience.region}", experience_path(experience) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Experience", new_experience_path %>
