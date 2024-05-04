@@ -23,9 +23,11 @@
       <a href="<%= new_experience_path %>" class="text-blue-600 hover:underline">View New Experience</a>
     </div>
 
-    <div class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
-      <%= link_to "Edit Experience", edit_experience_path %>
+
+    <div class="mt-8 bg-teal-400 text-white font-bold py-4 px-8 rounded-full hover:bg-green-400">
+      <%= link_to "Edit", edit_experience_path(@experience), class: "inline-block" %>
     </div>
+
 
 
       <!-- Host Information -->

@@ -27,7 +27,15 @@ class ExperiencesController < ApplicationController
 
   def update
     @experience = Experience.find(params[:id])
+    if @experience.update(experience_params)
+      redirect_to @experience
+    else
+      render 'edit'
+    end
+
+
   end
+
 
   def destroy
     @experience = Experience.find(params[:id])

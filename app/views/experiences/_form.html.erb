@@ -1,32 +1,37 @@
+<div class="p-5">
 
-<%= form_with(model: @experience, local: true) do |form| %>
-  <div class="actions">
-    <%= form.file_field :images, multiple: true %>
-  </div>
+  <%= form_with(model: @experience, local: true) do |form| %>
+    <div class="actions">
+      <%= form.file_field :images, multiple: true %>
+    </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
 
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country %>
-  </div>
+    <div class="field">
+      <%= form.label :country %>
+      <%= form.text_field :country %>
+    </div>
 
-  <div class="field">
-    <%= form.label :region %>
-    <%= form.text_field :region %>
-  </div>
+    <div class="field">
+      <%= form.label :region %>
+      <%= form.text_field :region %>
+    </div>
+    <div class="mt-8 bg-teal-400 text-white font-bold py-4 px-8 rounded hover:bg-green-400 cursor-pointer">
 
-  <div class="actions">
-    <%= form.submit "Submit" %>
-  </div>
+      <div class="actions">
+        <%= form.submit "Submit" %>
+      </div>
+    </div>
 
 
-<% end %>
+  <% end %>
+
+</div>
