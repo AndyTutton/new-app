@@ -39,6 +39,7 @@
         </div>
       </div>
 
+      <%= link_to "Delete", experiences_path(@experience), method: :delete, data: { confirm: "Are you sure?" }, class: "text-red-600 hover:underline" %>
       <!-- Directions -->
       <div class="mt-4">
         <h3 class="text-xl font-semibold text-gray-900">Directions</h3>
@@ -46,12 +47,13 @@
         <a href="#" class="text-blue-600 hover:underline">Open in Google Maps</a>
       </div>
 
-    </div>
-
     <!-- Footer -->
     <footer class="mt-8 w-full bg-white p-4 text-center">
       <p class="text-sm text-gray-600">&copy; 2024 Finca Tierra. All rights reserved.</p>
     </footer>
+    </div>
+
+
 
   <!-- New Experience Link -->
   </div>

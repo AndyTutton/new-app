@@ -1,17 +1,19 @@
-<div class="p-5">
+<div class="p-5 grid grid-cols-2 md:grid-cols-3 gap-4">
+  <div class="grid gap-4">
 
-  <h1><%= @experiences.count %> experiences found</h1>
-
-  <ul>
     <% @experiences.each do |experience| %>
-      <li>
-        <%= link_to "#{experience.title} - #{experience.country}, #{experience.region}", experience_path(experience) %>
-      </li>
+      <div>
+        <%= link_to experience_path(experience) do %>
+          <% experience.images.each do |image| %>
+            <%= image_tag url_for(image), class: "thumbnail" %>
+          <% end %>
+          <h2><%= experience.title %></h2>
+          <p><%= experience.description %></p>
+          <p>Country: <%= experience.country %></p>
+          <p>Region: <%= experience.region %></p>
+        <% end %>
+      </div>
     <% end %>
-  </ul>
+  </div>
 
-
-
-  <%= link_to "New Experience", new_experience_path %>
-
-</div>
+  </div>
