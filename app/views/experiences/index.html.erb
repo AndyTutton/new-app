@@ -1,12 +1,17 @@
+<div class="p-5">
 
-<h1>Experiences</h1>
+  <h1><%= @experiences.count %> experiences found</h1>
 
-<ul>
-  <% @experiences.each do |experience| %>
-    <li>
-      <%= link_to "#{experience.title} - #{experience.country}, #{experience.region}", experience_path(experience) %>
-    </li>
-  <% end %>
-</ul>
+  <ul>
+    <% @experiences.each do |experience| %>
+      <li>
+        <%= link_to "#{experience.title} - #{experience.country}, #{experience.region}", experience_path(experience) %>
+      </li>
+    <% end %>
+  </ul>
 
-<%= link_to "New Experience", new_experience_path %>
+
+
+  <%= link_to "New Experience", new_experience_path %>
+
+</div>
