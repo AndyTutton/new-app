@@ -1,37 +1,30 @@
-<div class="p-5">
+<%= form_with(model: @experience, local: true, class: "max-w-sm mx-auto") do |form| %>
+  <div class="flex items-center h-5">
+    <%= form.file_field :images, multiple: true, class: "w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" %>
+  </div>
 
-  <%= form_with(model: @experience, local: true) do |form| %>
-    <div class="actions">
-      <%= form.file_field :images, multiple: true %>
-    </div>
+  <div class="mb-5">
+    <%= form.label :title, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+    <%= form.text_field :title, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+  </div>
 
-    <div class="field">
-      <%= form.label :title %>
-      <%= form.text_field :title %>
-    </div>
+  <div class="mb-5">
+    <%= form.label :description, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+  <%= form.text_area :description, class: "autoresize bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 h-auto dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", rows: 8 %>
+  </div>
 
-    <div class="field">
-      <%= form.label :description %>
-      <%= form.text_area :description %>
-    </div>
+  <div class="mb-5">
+    <%= form.label :country, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+    <%= form.text_field :country, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+  </div>
 
-    <div class="field">
-      <%= form.label :country %>
-      <%= form.text_field :country %>
-    </div>
+  <div class="mb-5">
+    <%= form.label :region, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+    <%= form.text_field :region, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+  </div>
 
-    <div class="field">
-      <%= form.label :region %>
-      <%= form.text_field :region %>
-    </div>
-    <div class="mt-8 bg-teal-400 text-white font-bold py-4 px-8 rounded hover:bg-green-400 cursor-pointer">
+  <div class="mt-8">
+    <%= form.submit "Submit", class: "text-black bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 w-full sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" %>
+  </div>
 
-      <div class="actions">
-        <%= form.submit "Submit" %>
-      </div>
-    </div>
-
-
-  <% end %>
-
-</div>
+<% end %>
