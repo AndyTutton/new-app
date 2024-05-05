@@ -1,16 +1,14 @@
 <div class="p-5 grid grid-cols-2 md:grid-cols-3 gap-4">
-  <div class="grid gap-4">
+  <div class="grid gap-4 rounded">
 
     <% @experiences.each do |experience| %>
       <div>
         <%= link_to experience_path(experience) do %>
           <% experience.images.each do |image| %>
-            <%= image_tag url_for(image), class: "thumbnail" %>
+            <%= image_tag url_for(image), class: "thumbnail rounded-lg" %>
           <% end %>
-          <h2><%= experience.title %></h2>
-          <p><%= experience.description %></p>
-          <p>Country: <%= experience.country %></p>
-          <p>Region: <%= experience.region %></p>
+          <h2><strong><%= experience.title %></strong></h2>
+          <p><%= experience.country %>, <%= experience.region %></p>
         <% end %>
       </div>
     <% end %>
