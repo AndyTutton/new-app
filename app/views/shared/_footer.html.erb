@@ -20,7 +20,9 @@
   </div>
 
   <div class="pt-3 text-gray-900 text-sm flex flex-col items-center w-full">
-    <%= image_tag 'profile2.png', class: "w-[30px]" %>
+    <%= link_to edit_user_registration_path do %>
+      <%= image_tag 'profile2.png', class: "w-[30px]" %>
+    <% end %>
   </div>
 
 

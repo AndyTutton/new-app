@@ -16,6 +16,8 @@
       <h1 class="font-sans text-4xl"><%= @experience.title %></h1>
       <p class="text-lg"><%= @experience.country %>, <%= @experience.region %></p>
       <p class="text-2xl"><strong>Description:</strong> <%= @experience.description %></p>
+      <p class="text-right">€<%= @experience.nightly_price %>/night</p>
+
 
     <div class="mt-4">
       <h3 class="text-xl font-semibold text-gray-900">New Experience</h3>
@@ -29,6 +31,9 @@
     </div>
 
 
+    <div class="">
+      <%= link_to "Delete", experience_path(@experience), method: :delete, data: { confirm: "Are you sure?" }, class: "inline-block" %>
+    </div>
 
       <!-- Host Information -->
       <div class="mt-4 flex items-center">
@@ -39,7 +44,7 @@
         </div>
       </div>
 
-      <%= link_to "Delete", experiences_path(@experience), method: :delete, data: { confirm: "Are you sure?" }, class: "text-red-600 hover:underline" %>
+
       <!-- Directions -->
       <div class="mt-4">
         <h3 class="text-xl font-semibold text-gray-900">Directions</h3>
