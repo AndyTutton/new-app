@@ -1,4 +1,4 @@
-<body class="bg-white">
+<body class="">
   <!-- Image Gallery -->
   <div class="">
     <h3 class="text-xl font-semibold text-gray-900"></h3>
@@ -9,60 +9,42 @@
     </div>
   </div>
 
+  <div class="flex flex-col items-left p-6 min-h-screen">
+    <h1 class="font-sans text-4xl"><%= @experience.title %></h1>
+    <p class="text-lg"><%= @experience.country %>, <%= @experience.region %></p>
+    <p class="text-2xl"><strong>Description:</strong> <%= @experience.description %></p>
+    <p class="text-right">€<%= @experience.nightly_price %>/night</p>
 
-  <div class="flex flex-col items-center p-6 min-h-screen">
+    <!-- Additional Details -->
+    <div class="mt-4">
+      <h3 class="text-xl font-semibold text-gray-900">Additional Details</h3>
+      <p><strong>Category:</strong> <%= @experience.category.join(', ') %></p>
+      <p><strong>Hours per Week:</strong> <%= @experience.hours_per_week %></p>
+      <p><strong>Minimum Stay Weeks:</strong> <%= @experience.minimum_stay_weeks %></p>
+      <p><strong>Sleeping Arrangements:</strong> <%= @experience.sleeping %></p>
+      <p><strong>Catering Options:</strong> <%= @experience.catered %></p>
+    </div>
 
-
-      <h1 class="font-sans text-4xl"><%= @experience.title %></h1>
-      <p class="text-lg"><%= @experience.country %>, <%= @experience.region %></p>
-      <p class="text-2xl"><strong>Description:</strong> <%= @experience.description %></p>
-      <p class="text-right">€<%= @experience.nightly_price %>/night</p>
-
-
+    <!-- CTA for New Experience -->
     <div class="mt-4">
       <h3 class="text-xl font-semibold text-gray-900">New Experience</h3>
       <p class="text-gray-700">Check out our latest experience:</p>
       <a href="<%= new_experience_path %>" class="text-blue-600 hover:underline">View New Experience</a>
     </div>
 
-
-    <div class="mt-8 bg-teal-400 text-white font-bold py-4 px-8 rounded-full hover:bg-green-400">
-      <%= link_to "Edit", edit_experience_path(@experience), class: "inline-block" %>
-    </div>
-
-
-    <div class="">
-      <%= button_to "Delete", experience_path(@experience), method: :delete, data: { confirm: "Are you sure?" }, class: "inline-block" %>
-
-    </div>
-
-      <!-- Host Information -->
-      <div class="mt-4 flex items-center">
-        <img src="https://via.placeholder.com/100" class="w-12 h-12 rounded-full mr-3" alt="Host Avatar"/>
-        <div>
-          <h4 class="text-lg font-bold text-gray-900">Host Name</h4>
-          <p class="text-sm text-gray-600">Bio of the host goes here.</p>
-        </div>
+    <!-- Edit and Delete Buttons -->
+    <div class="mt-8 flex justify-between">
+      <div class="bg-teal-400 text-white font-bold py-4 px-8 rounded-full hover:bg-green-400">
+        <%= link_to "Edit", edit_experience_path(@experience), class: "inline-block" %>
       </div>
-
-
-      <!-- Directions -->
-      <div class="mt-4">
-        <h3 class="text-xl font-semibold text-gray-900">Directions</h3>
-        <p class="text-gray-700">Directions to the location go here.</p>
-        <a href="#" class="text-blue-600 hover:underline">Open in Google Maps</a>
+      <div>
+        <%= button_to "Delete", experience_path(@experience), method: :delete, data: { confirm: "Are you sure?" }, class: "inline-block bg-red-600 text-white font-bold py-4 px-8 rounded-full hover:bg-red-800" %>
       </div>
+    </div>
 
     <!-- Footer -->
     <footer class="mt-8 w-full bg-white p-4 text-center">
       <p class="text-sm text-gray-600">&copy; 2024 Finca Tierra. All rights reserved.</p>
     </footer>
-    </div>
-
-
-
-  <!-- New Experience Link -->
   </div>
-
-
 </body>
