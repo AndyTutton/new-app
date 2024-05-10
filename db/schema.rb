@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_05_121726) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_09_142446) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,6 +50,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_121726) do
     t.string "country"
     t.string "region"
     t.integer "nightly_price"
+    t.string "category", default: ["teaching", "environmental", "conservation", "animal_welfare", "community_development", "agriculture"], array: true
+    t.integer "hours_per_week"
+    t.integer "minimum_stay_weeks"
+    t.text "sleeping"
+    t.text "catered"
   end
 
   create_table "users", force: :cascade do |t|

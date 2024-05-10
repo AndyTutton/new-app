@@ -1,4 +1,5 @@
 class ExperiencesController < ApplicationController
+
   def index
     @experiences = Experience.all
   end
@@ -44,10 +45,14 @@ class ExperiencesController < ApplicationController
   end
 
 
-  private
-    def experience_params
-      params.require(:experience).permit(:title, :description, :country, :region, images: [])
-    end
+  def experience_params
+    params.require(:experience).permit(:title,
+                                       :description,
+                                       :country,
+                                       :region,
+                                       :nightly_price,
+                                       category: [])
+  end
 
 
 end

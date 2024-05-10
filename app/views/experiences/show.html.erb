@@ -32,7 +32,8 @@
 
 
     <div class="">
-      <%= link_to "Delete", experience_path(@experience), method: :delete, data: { confirm: "Are you sure?" }, class: "inline-block" %>
+      <%= button_to "Delete", experience_path(@experience), method: :delete, data: { confirm: "Are you sure?" }, class: "inline-block" %>
+
     </div>
 
       <!-- Host Information -->
