@@ -4,5 +4,8 @@ class Experience < ApplicationRecord
   validates :description, presence: true
   validates :country, presence: true
   validates :region, presence: true
+  has_many :experience_skills
+  has_many :skills, through: :experience_skills
+
 
 end
