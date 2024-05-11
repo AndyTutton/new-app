@@ -24,6 +24,7 @@ class ExperiencesController < ApplicationController
 
   def edit
     @experience = Experience.find(params[:id])
+    @skills = Skill.all
   end
 
   def update
@@ -46,12 +47,7 @@ class ExperiencesController < ApplicationController
 
 
   def experience_params
-    params.require(:experience).permit(:title,
-                                       :description,
-                                       :country,
-                                       :region,
-                                       :nightly_price,
-                                       category: [])
+    params.require(:experience).permit(:title, :description, :country, :region, :nightly_price, :category, :hours_per_week, :minimum_stay_weeks, :sleeping, :catered, images: [], skill_ids: [])
   end
 
 
