@@ -1,4 +1,4 @@
-<%= form_with(model: @experience, local: true, class: "max-w-md mx-auto") do |form| %>
+<%= form_with(model: @experience, local: true, class: "max-w-xl") do |form| %>
   <div class="flex items-center h-5">
     <%= form.file_field :images, multiple: true, class: "w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" %>
   </div>
@@ -57,12 +57,17 @@
   </div>
 
 
-  <% @experience.skills.each do |skill| %>
-    <label class="flex items-center">
-      <%= check_box_tag 'experience[skill_ids][]', skill.id, @experience.skills.include?(skill), class: "form-checkbox rounded" %>
-      <span class="ml-2"><%= skill.name %></span>
-    </label><br>
-  <% end %>
+  <!-- Skills -->
+  <div class="mb-5">
+    <h2 class="text-lg font-medium text-gray-900 dark:gray-900">Skills</h2>
+    <% Skill.all.each do |skill| %>
+      <label class="flex items-center">
+        <%= check_box_tag 'experience[skill_ids][]', skill.id, @experience.skills.include?(skill), class: "form-checkbox rounded" %>
+        <span class="ml-2"><%= skill.name %></span>
+      </label><br>
+    <% end %>
+  </div>
+
 
 
   <!-- Submit Button -->

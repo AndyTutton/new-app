@@ -109,39 +109,39 @@ Skill.create([
 #   catered: "Meals provided using locally sourced ingredients."
 # )
 
-skill_ids = Skill.pluck(:id)
+# skill_ids = Skill.pluck(:id)
 
-# Select three random skill IDs
-random_skill_ids = skill_ids.sample(3)
+# # Select three random skill IDs
+# random_skill_ids = skill_ids.sample(3)
 
-# Create an experience for saving turtles and associate random skills using skill_ids
-Experience.create!(
-  title: "Saving the Turtles",
-  description: "Join us in our mission to save turtles in their natural habitat. Help with monitoring, nesting, and conservation efforts.",
-  country: "Costa Rica",
-  region: "Pacific Coast",
-  nightly_price: 50,
-  category: ["environmental", "conservation", "animal_welfare"],
-  hours_per_week: 20,
-  minimum_stay_weeks: 2,
-  sleeping: "Volunteer dormitory",
-  catered: "Meals provided",
-  skill_ids: random_skill_ids
-)
+# # Create an experience for saving turtles and associate random skills using skill_ids
+# Experience.create!(
+#   title: "Saving the Turtles",
+#   description: "Join us in our mission to save turtles in their natural habitat. Help with monitoring, nesting, and conservation efforts.",
+#   country: "Costa Rica",
+#   region: "Pacific Coast",
+#   nightly_price: 50,
+#   category: ["environmental", "conservation", "animal_welfare"],
+#   hours_per_week: 20,
+#   minimum_stay_weeks: 2,
+#   sleeping: "Volunteer dormitory",
+#   catered: "Meals provided",
+#   skill_ids: random_skill_ids
+# )
 
-Experience.create!(
-  title: "Yoga Retreat",
-  description: "Relax and rejuvenate with our yoga retreat. Enjoy daily yoga sessions, meditation, and healthy meals in a serene environment.",
-  country: "India",
-  region: "Himalayas",
-  nightly_price: 100,
-  category: ["wellness", "retreat", "yoga"],
-  hours_per_week: 10,
-  minimum_stay_weeks: 1,
-  sleeping: "Private cottages",
-  catered: "Vegetarian meals",
-  skill_ids: random_skill_ids
-)
+# Experience.create!(
+#   title: "Yoga Retreat",
+#   description: "Relax and rejuvenate with our yoga retreat. Enjoy daily yoga sessions, meditation, and healthy meals in a serene environment.",
+#   country: "India",
+#   region: "Himalayas",
+#   nightly_price: 100,
+#   category: ["wellness", "retreat", "yoga"],
+#   hours_per_week: 10,
+#   minimum_stay_weeks: 1,
+#   sleeping: "Private cottages",
+#   catered: "Vegetarian meals",
+#   skill_ids: random_skill_ids
+# )
 
 
 
