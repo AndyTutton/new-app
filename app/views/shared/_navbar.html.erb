@@ -1,14 +1,19 @@
-    <div class="w-full bg-white shadow-md p-4 flex justify-between items-center">
+    <div class="w-full bg-white shadow-md p-1 flex justify-between items-center sticky top-0 z-10">
       <!-- Eco-friendly logo on the left -->
-      <a href="/" class="text-2xl font-bold text-blue-600 flex items-center">
-        Finca Tierra
-      </a>
+      <div class="">
+        <%= link_to root_path do %>
+          <div class="pl-3 flex flex-row items-end">
+            <%= image_tag 'finca.png', class: " w-[70px]" %>
+            <div class=" text-2xl font-light text-gray-800 ">Finca Tierra</div>
+          </div>
+        <% end %>
+      </div>
 
       <!-- Burger menu dropdown on the right -->
-      <div class="dropdown relative">
+      <div class="pr-3 dropdown relative">
         <button class="focus:outline-none">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
         <div class="dropdown-content">
