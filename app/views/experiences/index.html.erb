@@ -1,22 +1,16 @@
-<div class="p-3 ">
-  <div class="grid gap-8 sm:grid-cols-2">
-
+<div class="p-3">
+  <div class="sm:grid gap-6">
     <% @experiences.each do |experience| %>
-      <div>
+      <div class="flex flex-col-2 bg-white p-2 rounded shadow-lg ">
         <%= link_to experience_path(experience) do %>
-          <% experience.images.each do |image| %>
-            <%= image_tag url_for(image), class: " rounded-lg" %>
-          <% end %>
-          <div class="row"></div>
-            <h2 class="pt-3 font-bold"><%= experience.title %></h2>
-            <div class="flex justify-between pb-4">
-              <p class="text-left"><%= experience.country %>, <%= experience.region %></p>
-              <p class="text-right">€<%= experience.nightly_price %>/night</p>
-            </div>
-
+        <%= image_tag url_for(experience.images.first), class: "rounded w-full h-48 object-cover" %>
         <% end %>
+        <div class="p-4 flex-1 flex flex-col">
+          <h2 class="font-bold text-xl mb-2"><%= experience.title %></h2>
+          <p class="flex-1 text-gray-800"><%= experience.country %>, <%= experience.region %></p>
+          <p class="text-gray-800">€<%= experience.nightly_price %>/night</p>
+        </div>
       </div>
     <% end %>
   </div>
-
-  </div>
+</div>

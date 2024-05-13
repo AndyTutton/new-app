@@ -1,7 +1,29 @@
+Skill.destroy_all
+
+Skill.create([
+  { name: "Administration" },
+  { name: "Bartending" },
+  { name: "Photography" },
+  { name: "Social Media" },
+  { name: "Video Making" },
+  { name: "Animal Care" },
+  { name: "Cooking" },
+  { name: "Gardening" },
+  { name: "Building & Repairing" },
+  { name: "Housekeeping" },
+  { name: "Kitchen Hand" },
+  { name: "Party Promoter" },
+  { name: "Reception" },
+  { name: "Teaching Languages" },
+  { name: "Arts" },
+  { name: "Farming" },
+  { name: "Painting & Decorating" },
+  { name: "Tour Guide" }
+])
 
 
-# Array of available categories
-categories = ["teaching", "environmental", "Permaculture", "Conservation", "Animal Welfare", "Community_development", "NGO"]
+
+# categories = ["Teaching", "Environmental", "Permaculture", "Conservation", "Animal Welfare", "Community Development", "NGO"]
 
 # # Create first experience
 # Experience.create(
@@ -71,21 +93,56 @@ categories = ["teaching", "environmental", "Permaculture", "Conservation", "Anim
 #   minimum_stay_weeks: 4,
 #   sleeping: "Homestay accommodation with local families.",
 #   catered: "Local cuisine provided."
+# # )
+
+# # Create seventh experience with attached image
+# Experience.create(
+#   title: "Otorongo Conservation Project",
+#   description: "Join the Otorongo Conservation Project in the Peruvian Amazon. Assist with research, monitoring, and conservation efforts to protect endangered species and their habitats.",
+#   country: "Peru",
+#   region: "Amazon",
+#   nightly_price: 60,
+#   category: ["conservation", "environmental"],
+#   hours_per_week: 25,
+#   minimum_stay_weeks: 3,
+#   sleeping: "Accommodation provided in jungle lodges.",
+#   catered: "Meals provided using locally sourced ingredients."
 # )
 
-# Create seventh experience with attached image
-Experience.create(
-  title: "Otorongo Conservation Project",
-  description: "Join the Otorongo Conservation Project in the Peruvian Amazon. Assist with research, monitoring, and conservation efforts to protect endangered species and their habitats.",
-  country: "Peru",
-  region: "Amazon",
-  nightly_price: 60,
-  category: ["conservation", "environmental"],
-  hours_per_week: 25,
-  minimum_stay_weeks: 3,
-  sleeping: "Accommodation provided in jungle lodges.",
-  catered: "Meals provided using locally sourced ingredients."
-)
+# skill_ids = Skill.pluck(:id)
+
+# # Select three random skill IDs
+# random_skill_ids = skill_ids.sample(3)
+
+# # Create an experience for saving turtles and associate random skills using skill_ids
+# Experience.create!(
+#   title: "Saving the Turtles",
+#   description: "Join us in our mission to save turtles in their natural habitat. Help with monitoring, nesting, and conservation efforts.",
+#   country: "Costa Rica",
+#   region: "Pacific Coast",
+#   nightly_price: 50,
+#   category: ["environmental", "conservation", "animal_welfare"],
+#   hours_per_week: 20,
+#   minimum_stay_weeks: 2,
+#   sleeping: "Volunteer dormitory",
+#   catered: "Meals provided",
+#   skill_ids: random_skill_ids
+# )
+
+# Experience.create!(
+#   title: "Yoga Retreat",
+#   description: "Relax and rejuvenate with our yoga retreat. Enjoy daily yoga sessions, meditation, and healthy meals in a serene environment.",
+#   country: "India",
+#   region: "Himalayas",
+#   nightly_price: 100,
+#   category: ["wellness", "retreat", "yoga"],
+#   hours_per_week: 10,
+#   minimum_stay_weeks: 1,
+#   sleeping: "Private cottages",
+#   catered: "Vegetarian meals",
+#   skill_ids: random_skill_ids
+# )
+
 
 
 puts 'Seed data created successfully!'
