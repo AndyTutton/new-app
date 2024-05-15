@@ -1,0 +1,17 @@
+<div class="relative bg-cover bg-center text-white p-6 flex justify-center items-center max-h-500 bb-40 mb-30" style="background-image: url('<%= asset_path('turtle.png') %>');">
+  <div class="absolute inset-0 bg-blue-800 bg-opacity-30"></div>
+  <div class="relative max-w-6xl mx-auto text-center">
+    <h1 class="text-4xl font-bold pt-6">Volunteer and reconnect <br> with nature</h1>
+    <p class="mt-4">Reconnect with the natural world through volunteer and consevation projects.</p>
+    <p class="mt-4">4000 experiences to explore, 8000 other travellers.</p>
+    <div class="mt-8">
+      <%= link_to "Join us", new_user_registration_path, class: "inline-block bg-teal-400 text-white font-bold py-4 px-8 rounded-full hover:bg-green-400" %>
+    </div>
+
+
+
+    <div class="mt-4">
+      <%= link_to "Discover experiences", experiences_path, class: "font-bold" %>
+    </div>
+  </div>
+</div>
