@@ -45,6 +45,10 @@ class ExperiencesController < ApplicationController
     redirect_to experiences_path
   end
 
+  def self.search(search)
+    where("title LIKE ?", "%#{search}%")
+  end
+
 
   def experience_params
     params.require(:experience).permit(:title, :description, :country, :region, :nightly_price, :category, :hours_per_week, :minimum_stay_weeks, :sleeping, :catered, images: [], skill_ids: [])

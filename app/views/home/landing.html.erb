@@ -5,3 +5,34 @@
   <%= render partial: 'home/community_stats' %>
 
 </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Attach event listener to form submission
+    $('form').on('submit', function(event) {
+      // Prevent default form submission
+      event.preventDefault();
+
+      // Serialize form data
+      var formData = $(this).serialize();
+
+      // Send AJAX request
+      $.ajax({
+        url: $(this).attr('action'),
+        method: 'GET',
+        data: formData,
+        dataType: 'html',
+        success: function(response) {
+          // Update experiences list with response data
+          $('#experiences-list').html(response);
+        },
+        error: function(xhr, status, error) {
+          // Handle error
+          console.error(error);
+        }
+      });
+    });
+  });
+</script>
