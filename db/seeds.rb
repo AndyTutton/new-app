@@ -1,26 +1,43 @@
-Skill.destroy_all
+# Skill.destroy_all
 
-Skill.create([
-  { name: "Administration" },
-  { name: "Bartending" },
-  { name: "Photography" },
-  { name: "Social Media" },
-  { name: "Video Making" },
-  { name: "Animal Care" },
-  { name: "Cooking" },
-  { name: "Gardening" },
-  { name: "Building & Repairing" },
-  { name: "Housekeeping" },
-  { name: "Kitchen Hand" },
-  { name: "Party Promoter" },
-  { name: "Reception" },
-  { name: "Teaching Languages" },
-  { name: "Arts" },
-  { name: "Farming" },
-  { name: "Painting & Decorating" },
-  { name: "Tour Guide" }
-])
+# Skill.create([
+#   { name: "Administration" },
+#   { name: "Bartending" },
+#   { name: "Photography" },
+#   { name: "Social Media" },
+#   { name: "Video Making" },
+#   { name: "Animal Care" },
+#   { name: "Cooking" },
+#   { name: "Gardening" },
+#   { name: "Building & Repairing" },
+#   { name: "Housekeeping" },
+#   { name: "Kitchen Hand" },
+#   { name: "Party Promoter" },
+#   { name: "Reception" },
+#   { name: "Teaching Languages" },
+#   { name: "Arts" },
+#   { name: "Farming" },
+#   { name: "Painting & Decorating" },
+#   { name: "Tour Guide" }
+# ])
 
+# Create an admin user
+User.create!(
+  email: 'admin@example.com',
+  password: 'poiupoiu',
+  role: User.roles[:traveller], # Assuming you have an enum defined for roles
+  first_name: 'Admin',
+  last_name: 'User'
+)
+
+# Create a regular user
+User.create!(
+  email: 'user@example.com',
+  password: 'poiupoiu',
+  role: User.roles[:host], # Assuming you have an enum defined for roles
+  first_name: 'Regular',
+  last_name: 'User'
+)
 
 
 # categories = ["Teaching", "Environmental", "Permaculture", "Conservation", "Animal Welfare", "Community Development", "NGO"]

@@ -3,7 +3,7 @@
   <div class="relative max-w-6xl mx-auto text-center">
     <h1 class="text-4xl font-bold pt-6">Volunteer and reconnect <br> with nature</h1>
     <p class="mt-4">Reconnect with the natural world through volunteer and consevation projects.</p>
-    <p class="mt-4"><%=Experience.count%> experiences to explore, <%=User.count%> other travellers.</p>
+    <p class="mt-4"><%=Experience.count%> experiences to explore, <%=User.host.count%> other travellers.</p>
 
     <div class="mt-8">
       <%= link_to "Join us", new_user_registration_path, class: "inline-block bg-teal-400 text-white font-bold py-4 px-8 rounded-full hover:bg-green-400" %>
