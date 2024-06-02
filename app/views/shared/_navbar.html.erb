@@ -1,60 +1,61 @@
-    <div class="w-full bg-white shadow-md p-1  flex justify-between items-center sticky top-0 z-10">
-      <!-- Eco-friendly logo on the left -->
-      <div class="">
-        <%= link_to root_path do %>
-          <div class="my-1 pl-3 flex flex-row items-end">
-            <%= image_tag 'finca.png', class: " w-[70px]" %>
-            <div class=" text-2xl font-light text-gray-800 ">FincaTierra</div>
-          </div>
-        <% end %>
+<div class="w-full bg-white shadow-md p-1 flex justify-between items-center self-end sticky top-0 z-10">
+  <%# LOGO %>
+  <div class="">
+    <%= link_to root_path do %>
+      <div class="my-1 pl-3 flex flex-row items-end">
+        <%= image_tag 'finca.png', class: " w-[70px]" %>
+        <div class=" text-2xl font-light text-gray-800 ">FincaTierra</div>
       </div>
+    <% end %>
+  </div>
 
-      <div class="flex">
+  <%# WELCOME %>
+  <div class="">
+    <% if user_signed_in? %>
+      <% if current_user.traveller? %>
+        Welcome back: &nbsp; <h1 class="font-bold"><%= current_user.first_name%>!</h1>
+      <% end %>
+    <% end %>
+  </div>
+
+  <!-- Burger  -->
+  <div class="pr-3 pl-10 dropdown relative">
+    <button class="focus:outline-none">
+    &#9776;
+    </button>
+
+    <div class="dropdown-content">
+      <ul class="text-left">
+        <li class="py-1 px-4 hover:bg-gray-200"><%= link_to "Experience", experiences_path %></li>
+        <li class="py-1 px-4 hover:bg-gray-200"><%= link_to "Home", root_path %></li>
         <% if user_signed_in? %>
-          <% if current_user.traveller? %>
-            Welcome: <h1 class="underline"><%= current_user.email %> </h1>
-          <% end %>
+          <li class="py-1 px-4 hover:bg-gray-200"><%= link_to "Profile", edit_user_registration_path %></li>
+          <li class="py-1 px-4 hover:bg-gray-200"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li class="py-1 px-4 hover:bg-gray-200"><%= link_to "Sign In", new_user_session_path %></li>
+          <li class="py-1 px-4 hover:bg-gray-200"><%= link_to "Sign Up", new_user_registration_path %></li>
         <% end %>
-      </div>
-
-        <!-- Burger menu dropdown on the right -->
-        <div class="pr-3 pl-10 dropdown relative">
-          <button class="focus:outline-none">
-          &#9776;
-          </button>
-
-          <div class="dropdown-content">
-            <ul class="text-left">
-              <li class="py-1 px-4 hover:bg-gray-200"><%= link_to "Experience", experiences_path %></li>
-              <li class="py-1 px-4 hover:bg-gray-200"><%= link_to "Home", root_path %></li>
-              <% if user_signed_in? %>
-                <li class="py-1 px-4 hover:bg-gray-200"><%= link_to "Profile", edit_user_registration_path %></li>
-                <li class="py-1 px-4 hover:bg-gray-200"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-              <% else %>
-                <li class="py-1 px-4 hover:bg-gray-200"><%= link_to "Sign In", new_user_session_path %></li>
-                <li class="py-1 px-4 hover:bg-gray-200"><%= link_to "Sign Up", new_user_registration_path %></li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-
-
-      </div>
+      </ul>
     </div>
+  </div>
 
-  <style>
-    /* Additional styles for menu dropdown */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      right: 0;
-      background-color: white;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      min-width: 160px;
-      z-index: 1;
-    }
 
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-  </style>
+  </div>
+</div>
+
+<style>
+/* Additional styles for menu dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
