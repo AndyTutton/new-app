@@ -9,14 +9,6 @@
     <% end %>
   </div>
 
-  <%# WELCOME %>
-  <div class="">
-    <% if user_signed_in? %>
-      <% if current_user.traveller? %>
-        Welcome back: &nbsp; <h1 class="font-bold"><%= current_user.first_name%>!</h1>
-      <% end %>
-    <% end %>
-  </div>
 
   <!-- Burger  -->
   <div class="pr-3 pl-10 dropdown relative">

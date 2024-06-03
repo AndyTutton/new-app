@@ -4,16 +4,16 @@
     <h3 class="text-xl font-semibold text-gray-900"></h3>
     <div class="">
       <% @experience.images.each do |image| %>
-        <%= image_tag(image, style: "object-fit: contain; width: 100%; height: 500px;") %>
+        <%= image_tag(image, style: "object-fit: cover; width: 100%; height: 300px") %>
       <% end %>
     </div>
   </div>
 
-  <div class="flex flex-col items-left p-6 min-h-screen">
-    <h1 class="font-sans text-4xl"><%= @experience.title %></h1>
-    <p class="text-lg"><%= @experience.country %>, <%= @experience.region %></p>
-    <p class="text-2xl"><strong>Description:</strong> <%= @experience.description %></p>
-    <p class="text-right">€<%= @experience.nightly_price %>/night</p>
+  <div class="flex flex-col items-left p-5 min-h-screen">
+    <h1 class="font-sans text-2xl font-bold"><%= @experience.title %></h1>
+    <p class="text-sm italic"><%= @experience.country %>, <%= @experience.region %></p>
+    <p class="mt-4 text-xl"> <%= @experience.description %></p>
+    <p class="text-left">€<%= @experience.nightly_price %>/night</p>
 
     <!-- Additional Details -->
     <div class="mt-4">
@@ -29,7 +29,12 @@
 
     <h1>Skills required</h1>
     <% @experience.skills.each do |skill| %>
-      <p><%= skill.name %></p>
+      <div class="flex">
+        <% if skill.icon_url.present? %>
+          <%= image_tag(skill.icon_url, alt: skill.name, class: "pr-2 mb-2 h-6 skill-icon") %>
+        <% end %>
+        <p><%= skill.name %></p>
+      </div>
     <% end %>
 
 
