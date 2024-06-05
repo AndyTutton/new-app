@@ -1,3 +1,22 @@
+Category.destroy_all
+
+Category.create([
+  { name: "NGO" },
+  { name: "Community" },
+  { name: "School" },
+  { name: "Hostel" },
+  { name: "Camping" },
+  { name: "Farm" },
+  { name: "Permaculture" },
+  { name: "Eco Village" },
+  { name: "Holistic Center" },
+  { name: "Guest House" }
+])
+
+
+
+
+
 # Skill.destroy_all
 
 # Skill.create([
@@ -22,22 +41,22 @@
 # ])
 
 # Create an admin user
-User.create!(
-  email: 'admin@example.com',
-  password: 'poiupoiu',
-  role: User.roles[:traveller], # Assuming you have an enum defined for roles
-  first_name: 'Admin',
-  last_name: 'User'
-)
+# User.create!(
+#   email: 'admin@example.com',
+#   password: 'poiupoiu',
+#   role: User.roles[:traveller], # Assuming you have an enum defined for roles
+#   first_name: 'Admin',
+#   last_name: 'User'
+# )
 
-# Create a regular user
-User.create!(
-  email: 'user@example.com',
-  password: 'poiupoiu',
-  role: User.roles[:host], # Assuming you have an enum defined for roles
-  first_name: 'Regular',
-  last_name: 'User'
-)
+# # Create a regular user
+# User.create!(
+#   email: 'user@example.com',
+#   password: 'poiupoiu',
+#   role: User.roles[:host], # Assuming you have an enum defined for roles
+#   first_name: 'Regular',
+#   last_name: 'User'
+# )
 
 
 # categories = ["Teaching", "Environmental", "Permaculture", "Conservation", "Animal Welfare", "Community Development", "NGO"]

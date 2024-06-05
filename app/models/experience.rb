@@ -5,5 +5,7 @@ class Experience < ApplicationRecord
   validates :country, presence: true
   validates :region, presence: true
   has_and_belongs_to_many :skills
+  has_many :experience_categories
+  has_many :categories, through: :experience_categories
 
 end
