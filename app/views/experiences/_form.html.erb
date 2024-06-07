@@ -1,6 +1,22 @@
 <%= form_with(model: @experience, local: true, class: "max-w-xl") do |form| %>
-  <div class="flex items-center h-5">
-    <%= form.file_field :images, multiple: true, class: "w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" %>
+
+  <% if @experience.images.attached? %>
+    <div class="mb-5">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:gray-900"></label>
+      <% @experience.images.each do |image| %>
+        <%= image_tag image, class: "w-full rounded-lg" %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :category_ids, "Categories" %>
+    <%= form.collection_select :category_ids, Category.all, :id, :name, { prompt: "Select categories..." }, { multiple: true, class: "form-select" } %>
+  </div>
+
+  <div class="mb-5">
+    <%= form.label :images, class: "block mb-2 text-sm font-medium text-gray-900 dark:gray-900" %>
+    <%= form.file_field :images, multiple: true, class: "w-full border border-gray-300 rounded-lg p-2.5" %>
   </div>
 
   <div class="mb-5">
@@ -26,11 +42,6 @@
     <%= form.text_field :region, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
   </div>
 
-  <!-- Category -->
-  <div class="mb-5">
-    <%= form.label :category, class: "block mb-2 text-sm font-medium text-gray-900 dark:gray-900" %>
-    <%= form.text_field :category, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
-  </div>
 
   <!-- Hours Per Week -->
   <div class="mb-5">
@@ -67,10 +78,6 @@
     <% end %>
   </div>
 
-  <div class="field">
-    <%= form.label :category_ids, "Categories" %>
-    <%= form.collection_select :category_ids, Category.all, :id, :name, { prompt: "Select categories..." }, { multiple: true, class: "form-select" } %>
-  </div>
 
 
 
