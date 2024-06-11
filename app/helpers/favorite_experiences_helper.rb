@@ -1,0 +1,2 @@
+module FavoriteExperiencesHelper
+end

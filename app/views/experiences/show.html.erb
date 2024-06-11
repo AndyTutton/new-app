@@ -1,52 +1,53 @@
 <body class="">
   <!-- Image Gallery -->
   <div class="">
-    <h3 class="text-xl font-semibold text-gray-900"></h3>
+    <h3 class="relative text-xl font-semibold text-gray-900"></h3>
     <div class="">
       <% @experience.images.each do |image| %>
         <%= image_tag(image, style: "object-fit: cover; width: 100%; height: 300px") %>
       <% end %>
+
+      <div class="absolute top-20 right-5">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256"
+        style="fill:#000000;">
+        <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M22.939,9.425c-0.147,-0.453 -0.539,-0.782 -1.009,-0.851l-6.087,-0.885l-2.722,-5.516c-0.211,-0.426 -0.645,-0.696 -1.121,-0.696c-0.476,0 -0.91,0.27 -1.121,0.697l-2.722,5.515l-6.087,0.885c-0.47,0.069 -0.862,0.398 -1.009,0.851c-0.147,0.453 -0.024,0.949 0.316,1.281l4.405,4.294l-1.04,6.062c-0.081,0.469 0.112,0.943 0.497,1.223c0.385,0.279 0.896,0.316 1.316,0.095l5.445,-2.863l5.444,2.862c0.183,0.096 0.382,0.144 0.582,0.144c0.259,0 0.517,-0.081 0.735,-0.239c0.385,-0.28 0.578,-0.753 0.497,-1.223l-1.04,-6.061l4.404,-4.293c0.341,-0.333 0.464,-0.83 0.317,-1.282z"></path></g></g>
+        </svg>
+      </div>
     </div>
   </div>
 
   <div class="flex flex-col items-left p-5 min-h-screen">
-    <h1 class="font-sans text-2xl font-bold"><%= @experience.title %></h1>
+    <h1 class="font-sans text-2xl font-bold tracking-extra-wide"><%= @experience.title %></h1>
     <p class="text-sm italic"><%= @experience.country %>, <%= @experience.region %></p>
-    <p class="mt-4 text-xl"> <%= @experience.description %></p>
+    <p class="mt-4 text-xl "> <%= @experience.description %></p>
 
-  <ul>
-    <% @experience.categories.each do |category| %>
-      <li><%= category.name %></li>
-    <% end %>
-  </ul>
 
-    <!-- Additional Details -->
-    <div class="mt-4">
-      <p><strong>Hours per Week:</strong> <%= @experience.hours_per_week %></p>
-      <p><strong>Minimum Stay Weeks:</strong> <%= @experience.minimum_stay_weeks %></p>
-      <p><strong>Sleeping Arrangements:</strong> <%= @experience.sleeping %></p>
-      <p><strong>Catering Options:</strong> <%= @experience.catered %></p>
-    </div>
-
-    <!-- Skills required -->
-
-    <h1>Skills required</h1>
-    <% @experience.skills.each do |skill| %>
-      <div class="flex">
-        <% if skill.icon_url.present? %>
-          <%= image_tag(skill.icon_url, alt: skill.name, class: "pr-2 mb-2 h-6 skill-icon") %>
+      <!-- Skills required -->
+      <div class=" border-t border-b my-6 py-6">
+        <% @experience.skills.each do |skill| %>
+          <div class="grid grid-cols-1 gap-4 ">
+            <div class="flex items-center   p-1">
+              <% if skill.icon_url.present? %>
+                <%= image_tag(skill.icon_url, alt: skill.name, class: "pr-2  h-7 skill-icon") %>
+              <% end %>
+              <p><%= skill.name %></p>
+            </div>
+          </div>
         <% end %>
-        <p><%= skill.name %></p>
       </div>
-    <% end %>
+
+      <!-- Additional Details -->
+      <div class="pt-6 space-y-6">
+        <p class="p-2 bg-gray-100 rounded-lg"><strong>Category</strong> <br>
+          <%= @experience.categories.map(&:name).join(', ') %>
+        </p>
+        <p class="p-2 bg-gray-100 rounded-lg"><strong>Hours needed:</strong> <br><%= @experience.hours_per_week %>&nbsp;hours per week</p>
+        <p class="p-2 bg-gray-100 rounded-lg"><strong>Minimum stay:</strong> <br><%= @experience.minimum_stay_weeks %></p>
+        <p class="p-2 bg-gray-100 rounded-lg"><strong>Sleeping Arrangements:</strong> <br><%= @experience.sleeping %></p>
+        <p class="p-2 bg-gray-100 rounded-lg"><strong>Catering Options:</strong> <br><%= @experience.catered %></p>
+      </div>
 
 
-    <!-- CTA for New Experience -->
-    <div class="mt-4">
-      <h3 class="text-xl font-semibold text-gray-900">New Experience</h3>
-      <p class="text-gray-700">Check out our latest experience:</p>
-      <a href="<%= new_experience_path %>" class="text-blue-600 hover:underline">View New Experience</a>
-    </div>
 
     <!-- Edit and Delete Buttons -->
     <div class="mt-8 flex justify-between">

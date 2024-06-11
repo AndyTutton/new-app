@@ -23,6 +23,9 @@ module.exports = {
       fontFamily: {
         sans: ['Dosis', 'Inter var', ...defaultTheme.fontFamily.sans],
       },
+      letterSpacing: {
+        'extra-wide': '0.05em',
+      },
     },
   },
   plugins: [

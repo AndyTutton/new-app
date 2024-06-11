@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :favorite_experiences
   devise_scope :user do
     get '/users', to: 'devise/registrations#new'
     get '/users/password/new', to: 'devise/passwords#new'

@@ -8,4 +8,8 @@ class Experience < ApplicationRecord
   has_many :experience_categories
   has_many :categories, through: :experience_categories
 
+  has_many :favorite_experiences, dependent: :destroy
+  has_many :favorited_by, through: :favorite_experiences, source: :user
+
+
 end
