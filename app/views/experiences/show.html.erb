@@ -23,18 +23,20 @@
 
 
       <!-- Skills required -->
-      <div class=" border-t border-b my-6 py-6">
+
+    <div class="border-t border-b my-6 py-6">
+      <div class="grid grid-cols-2 gap-4">
         <% @experience.skills.each do |skill| %>
-          <div class="grid grid-cols-1 gap-4 ">
-            <div class="flex items-center   p-1">
-              <% if skill.icon_url.present? %>
-                <%= image_tag(skill.icon_url, alt: skill.name, class: "pr-2  h-7 skill-icon") %>
-              <% end %>
-              <p><%= skill.name %></p>
-            </div>
+          <div class="flex items-center p-1">
+            <% if skill.icon_url.present? %>
+              <%= image_tag(skill.icon_url, alt: skill.name, class: "pr-2 h-7 skill-icon") %>
+            <% end %>
+            <p><%= skill.name %></p>
           </div>
         <% end %>
       </div>
+    </div>
+
 
       <!-- Additional Details -->
       <div class="pt-6 space-y-6">
